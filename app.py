@@ -10,7 +10,7 @@ scaler = joblib.load("iris_scaler.joblib")
 
 #App title
 st.title("Iris Species Predictor")
-st.write("Ajust the sliders to predict the iris species.")
+st.write("Adjust the sliders to predict the iris species.")
 
 #User input sliders
 sepal_length = st.slider("Sepal length (cm)", 4.0, 8.0, 5.8)
