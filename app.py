@@ -32,8 +32,24 @@ input_df = pd.DataFrame(
 scaled_input = scaler.transform(input_df)
 
 #Make prediction
-prediction = model.predict(scaled_input)
+prediction = model.predict(scaled_input)[0]
+
+#Prediction probabilities
+probability = model.predict_proba(scaled_input)[0]
+confidence = max(probability)
 
 #Display result
 st.subheader("Prediction")
-st.write(f"Predicted iris species: **{prediction[0]}**")
+st.write(f"Predicted iris species: **{prediction}**")
+
+st.subheader("Prediction Probabilities")
+for species, p in zip(model.classes_, probability):
+    st.write(f"{species}: {p:.2%}")
+
+st.subheader("Model confidence")
+st.write("Confidence in the predicted class:")
+st.progress(confidence)
+st.write(f"{confidence:.2%}")
+
+#Interpretation
+st.caption ("Model confidence represents the highest predicted class probability and reflects the model's certainty for the given input.")
