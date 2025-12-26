@@ -7,7 +7,8 @@
 * app.py - code for the app
 
 * iris_logisitic_regression_model.joblib and iris_scaler.joblib - trained model and scaler
-requirements.txt - libraries required for the app 
+  
+* requirements.txt - libraries required for the app 
 
 ## Iris Species Predictor (Classification App) ##
 * A Streamlit app that predicts the species of an Iris flower based on sepal and petal dimensions using a logistic regression model
